@@ -2,10 +2,31 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Prueba from "./Prueba"
 
 function App() {
   const [count, setCount] = useState(0)
 
+function handleClick() {
+  setCount(count + 1) 
+}
+
+function Formu () {
+
+  
+  return(
+    <form action="get">
+      <label><span>Nombre</span>
+      <input type="text" name='name' placeholder='Nombre' /></label>
+      <label htmlFor="">Apellido</label>
+      <input type="text" placeholder='Apellido' />
+      <button>enviar ahora</button>
+    </form>
+  )
+  
+}
+
+let nombre = "Agustin"
   return (
     <>
       <div>
@@ -16,9 +37,14 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Agustin Chazarreta Cruz</h1>
+      {Formu()}
+      <p>
+        nombre: Me llamo {nombre}
+      </p>
+      <Prueba/>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => handleClick()}>
           count is {count}
         </button>
         <p>
